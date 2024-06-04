@@ -13,35 +13,45 @@
 \usepackage{makeidx}
 \usepackage{xcolor}
 \usepackage{fontspec}
-\usepackage{subfigure}
 \usepackage{pythonhighlight}
-\usepackage{caption}     % 用于自定义标题
+\usepackage{caption} % 用于自定义标题
+\usepackage{titlesec} % 自定义标题格式
+\usepackage{fmtcount} % 引入fmtcount宏包
+\usepackage{tocloft} % 加载tocloft宏包
 
 \pagestyle{fancy}
 \fancyhead[L]{}
 \fancyhead[C]{Formula Derivation of R-VIO}
 \fancyhead[R]{}
 
+% 自定义section命令的格式
+\titleformat{\section} % 命令
+{\normalfont\Large\bfseries} % 格式化
+{\thesection} % 编号
+{0.5em} % 编号和标题文本之间的距离
+{\raggedright} % 左对齐
+
+% 设置目录中编号与标题之间的距离
+\setlength{\cftsecnumwidth}{0.5em} % 设置节编号的宽度
+
 \begin{document}
 	
-\tableofcontents
+\tableofcontents % 生成目录
 
 \thispagestyle{empty}
 
 \newpage
+\pagenumbering{arabic}
 
-\begin{figure}
+\section{Estimator design}
+
+
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.65\textwidth]{figures/robocentric formulation illustration.png}
 \captionsetup{labelformat=empty}
 \caption{Figure 1.1: World-centric vs. robocentric formulation}
 \end{figure}
-
-\section{引言}
-
-在此填写引言
-
-\
 
 \section{第2章标题}
 
